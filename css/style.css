@@ -1,0 +1,107 @@
+/*debugging*/
+*{
+    margin-left: 16px;
+    margin-right: 16px;
+    box-sizing: border-box;
+ }
+img {
+    width: 200px;
+}
+
+/*Header styling*/
+
+.profile {
+    /* outline: 1px solid blue !important; */
+    position: relative;
+    grid-template-rows: 45% 10% 45%;
+    grid-template-columns: 50% 50%;
+    color: blue;
+}
+/*styles unscrollable portion of header*/
+.hidden-header {
+    visibility: hidden;
+}
+.profile-details-title {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+.profile-noscroll-header {
+    /* outline: 1px solid green !important; */
+    position: fixed;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    color: green;
+    z-index: 1;
+}
+/*styles scrollable header content*/
+.profile-scroll-header {
+    display: grid;
+    padding: 5%;
+    gap: 5%;
+    /* grid-template-columns: 50% 50%; */
+}
+.profile-scroll-header figure {
+    display: flex;
+    justify-content: center;
+}
+
+/*styling main content*/
+#main {
+    display: grid;
+    justify-content: center ;
+}
+
+
+
+
+/*body styling*/
+.meets {
+    outline: 1px dashed yellowgreen !important;
+    display: grid;
+    /* justify-content: stretch; */
+}
+
+.meet-grid {
+    outline: 1px dashed violet !important;
+    display: grid;
+    justify-content: space-around;
+    align-content: space-around;
+    /* grid-template-columns: 33% 33% 33%; */
+}
+.meet-card {
+    padding: 3%;
+    /* outline: 1px solid red !important; */
+    display: grid;
+    align-items: center;
+    justify-content: center;
+}
+.meet-card > .spacer {
+    display: grid;
+    justify-content: center;
+}
+
+/*styleing perforamcen visualization section*/
+#performance-panel {
+    display:grid;
+    justify-content: center;
+    outline: 3px dotted green !important;
+}
+
+.viz-area {
+    outline: 1px solid crimson !important;
+    overflow: auto;
+}
+
+
+.chart-container {
+    outline: 1px solid purple !important;
+    width: 1000px;
+    height: 400px;
+    /* position: relative; */
+    
+}
+
+
