@@ -1,71 +1,124 @@
-/*debugging*/
 *{
-    margin-left: 16px;
-    margin-right: 16px;
     box-sizing: border-box;
+    color: #000000;
  }
 img {
-    width: 200px;
+    width: 100%;
+    padding: 5% 0;
 }
 
-/*Header styling*/
+/*fonts and text styling*/
+#meets-title, .meet-card > h3, #bio-title {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif, serif;
+
+}
+p {
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.meta {
+    font-size: 75%;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif, serif;
+}
+summary {
+    background-color: white;
+    border-radius: 10px;
+
+}
+details {
+    display: grid;
+    gap: 5%;
+}
+
+/*body spacing*/
+body {
+    margin: 0;
+    padding: 16px;
+}
+
+/********Header styling***********/
 
 .profile {
-    /* outline: 1px solid blue !important; */
-    position: relative;
     grid-template-rows: 45% 10% 45%;
     grid-template-columns: 50% 50%;
-    color: blue;
 }
+
 /*styles unscrollable portion of header*/
+.profile-noscroll-header, .hidden-header {
+    background-color: white;
+    border: 5vh solid;
+    border-image-slice: 10%;
+    border-image: url(../images/cloud_garrett.jpg) 70 repeat;
+
+    width: 100%;
+    gap: 5%;
+    padding: 5%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    flex-shrink: 1;
+    align-items: center;
+    z-index: 1;
+    top: 0;
+    left: 0;
+}
+
 .hidden-header {
     visibility: hidden;
-}
-.profile-details-title {
-    display: flex;
-    justify-content: space-between;
-    gap: 10px;
+    position: relative;
 }
 
 .profile-noscroll-header {
-    /* outline: 1px solid green !important; */
     position: fixed;
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    color: green;
-    z-index: 1;
 }
+
+.profile-details-title {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+
 /*styles scrollable header content*/
 .profile-scroll-header {
     display: grid;
     padding: 5%;
-    gap: 5%;
     /* grid-template-columns: 50% 50%; */
 }
 .profile-scroll-header figure {
     display: flex;
     justify-content: center;
 }
-
-/*styling main content*/
-#main {
-    display: grid;
-    justify-content: center ;
+#athlete-bio {
+    padding: 5%;
+    border: 10px groove #9bddff;
+}
+.race-details {
+    padding: 5%;
+    background-color: white;
+    border: 10px groove #7a7202;
 }
 
 
 
+/********styling main content*********/
+#main {
+    display: grid;
+    justify-content: center ;
+    background-color: #9bddff;
+    padding: 5%;
+
+}
+
 
 /*body styling*/
 .meets {
-    outline: 1px dashed yellowgreen !important;
     display: grid;
     /* justify-content: stretch; */
 }
 
 .meet-grid {
-    outline: 1px dashed violet !important;
     display: grid;
     justify-content: space-around;
     align-content: space-around;
@@ -73,31 +126,72 @@ img {
 }
 .meet-card {
     padding: 3%;
-    /* outline: 1px solid red !important; */
     display: grid;
     align-items: center;
-    justify-content: center;
+    justify-items: stretch;
 }
+.meet-card > h3 {
+    justify-self: center;
+    text-align: center;
+}
+
 .meet-card > .spacer {
-    display: grid;
+    /* display: block;
     justify-content: center;
+    align-items: center; */
+    width:75%;
+    justify-self: center;
 }
+
+/*styling the toggle buttons*/
+summary {
+    padding: 3%;
+    /*removes default arrow but still accesible to screen readers*/
+    list-style: none;
+
+    cursor: pointer;
+    position: relative;
+    padding-left: 2.5em;
+}
+
+summary::before {
+    content: "";
+    position: absolute;
+    display: inline-block;
+    transform: translateY(-50%);
+    height: 1.5em;
+    width: 1.5em;
+
+    
+    left: 0.5em;
+    top: 50%;
+
+    background-image: url("../images/garrett_dropdown_closed.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+
+}
+
+details[open] summary::before {
+    background-image: url("../images/garrett_dropdown_open.png");
+
+}
+
+
+
 
 /*styleing perforamcen visualization section*/
 #performance-panel {
     display:grid;
     justify-content: center;
-    outline: 3px dotted green !important;
 }
 
 .viz-area {
-    outline: 1px solid crimson !important;
     overflow: auto;
 }
 
 
 .chart-container {
-    outline: 1px solid purple !important;
     width: 1000px;
     height: 400px;
     /* position: relative; */
