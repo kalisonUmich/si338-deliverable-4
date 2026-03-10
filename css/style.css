@@ -1,14 +1,48 @@
-*{
+/******whole-page styling*********/
+ * {
     box-sizing: border-box;
  }
+ :root {
+    --default-background: white;
+    background-color: white;
+    color: black;
+ }
+ h1 {
+    display: block;
+    font-size: 2em;
+    font-weight: bold;
+    margin-top: 0.25em;
+    margin-bottom: 0.25em;
+ }
+ h2 {
+    display: block;
+    font-weight: bold;
+    font-size: 1.5em;
+    margin-top: 0.83em;
+    margin-bottom: 0.83em;
+ }
+ h3 {
+    font-weight: bold;
+    display: block;
+    font-size: 1.3em;
+    margin-top: 1em;
+    margin-bottom: 1em;
+ }
+p {
+    display: block;
+    line-height: 1.5em;
+    margin-top: 1em;
+    margin-bottom: 1em;
+}
 img {
     width: 90%;
-    margin: 5%;
+    margin: 3%;
     border: 10px groove #7a7202;
  
 }
 
-/*fonts and text styling*/
+
+/******fonts and text styling******/
 #meets-title, .meet-card h3, #bio-title, .profile-details-title, #performance-title {
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif, serif;
 
@@ -16,6 +50,7 @@ img {
 p {
     font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
+
 .meta {
     font-size: 75%;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif, serif;
@@ -29,27 +64,30 @@ p {
     90% {transform: rotate(15deg);}
     100%{transform: rotate(0deg);}
 }
-summary {
-    background-color: white;
-    border-radius: 10px;
 
-}
-details {
-    display: grid;
-    gap: 5%;
-}
 
-/*body spacing*/
-body {
-    margin: 0;
-    padding: 16px;
-}
+
 
 /********Header styling***********/
 
+/*styles skip to main content*/
+.hidden-focusable {
+    z-index: 5;
+    padding: 1em;
+    font-weight: bold;
+    background-color: white;
+    position: absolute;
+    left: -1000px;
+    transition: left 0.3s;
+}   
+.hidden-focusable:focus {
+    left: 3em;
+    border: 3px dashed red;
+}
+
 /*styles unscrollable portion of header*/
 .profile-noscroll-header, .hidden-header {
-    background-color: white;
+    background-color: var(--default-background);
     border: 5vh solid;
     border-image-slice: 10%;
     border-image: url(../images/cloud_garrett.jpg) 70 repeat;
@@ -82,10 +120,14 @@ body {
 }
 
 
+
+
+
+
 /*styles scrollable header content*/
 .profile-scroll-header {
     display: grid;
-    padding: 5%;
+    padding: 1em;
     gap: 2em;
 }
 .profile-scroll-header figure {
@@ -93,41 +135,60 @@ body {
     justify-content: center;
 }
 #athlete-bio, .profile-details-title {
-    padding: 5%;
+    padding: 1em;
     border: 10px groove #7cbde7;
 }
 
 .race-details {
-    padding: 5%;
-    background-color: white;
+    padding: 0.5em;
+    background-color: var(--default-background);
     border: 10px groove #7a7202;
 }
-/*styles the nav 'button'*/
-.nav {
+
+
+
+
+
+
+/*styles the skip to graph'button'*/
+.skip-to-graph {
+    z-index: 100;
     display: grid;
     justify-content: center;
     padding: 5%;
 
 }
 
-.nav a {
+.skip-to-graph a {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     font-weight: bold;
-    background-color: #7cbde7;
-    border: 2px solid #6092b3;
+    border: 2px solid #b5b1b1;
+    background-color: #e6e6e6;
     padding: 1em;
     border-radius: 10px;
 
 }
-.nav a:hover {
+.skip-to-graph a:hover {
     font-weight: bold;
-    background-color: #6092b3;
-    border: 2px solid #355061;
+    border: 2px solid #807d7d;
+    background-color: #514f4f;
     color: white;
+}
+.skip-to-graph a:focus-visible {
+    border: 5px dashed red;
 }
 
 
+
+
+
+
 /********styling main content*********/
+body {
+    margin: 0;
+    padding: 16px;
+}
+
 #main {
     gap: 2em;
     border-radius: 10px;
@@ -144,12 +205,14 @@ body {
     display: grid;
     border-radius: 10px;
 }
+
 /*styling titles with the white bubble around them*/
 #meets-title, .meet-card > h3, #performance-title {
-    background-color: white;
+    background-color: var(--default-background);
     padding: 3%;
     border-radius: 10px;
 }
+
 .meet-grid {
     display: grid;
     justify-content: space-around;
@@ -157,7 +220,7 @@ body {
     gap: 1em;
 }
 .meet-card, #performance-panel {
-    background-color: white;
+    background-color: var(--default-background);
     border-radius: 10px;
     padding: 3%;
     display: grid;
@@ -176,6 +239,8 @@ body {
 
 /*styling the toggle buttons*/
 summary {
+    border-radius: 10px;
+    color: black;
     border: 2px solid #b5b1b1;
     background-color: #e6e6e6;
     padding: 3%;
@@ -219,7 +284,7 @@ details[open] summary::before {
 
 
 
-/*styling what's left of the perforamcen visualization section*/
+/*styling what's left of the performance visualization section*/
 #performance-title {
     text-align: center;
 
@@ -239,4 +304,34 @@ details[open] summary::before {
     
 }
 
+
+
+/*reduced motion and color scheme media queries*/
+@media (prefers-reduced-motion: reduce) {
+    .meta {
+    font-size: 75%;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif, serif;
+    animation: none;
+    }
+}
+@media (prefers-color-scheme: dark) {
+    :root {
+    --default-background: black;
+    background-color: black;
+    color: white;
+    }
+    .profile-details-title a:link {
+        background-color: white;
+        padding: 0.5em;
+    }
+    .skip-to-graph :link {
+        background-color: white;
+        padding: 0.5em;
+        border-radius: 10px;
+    }
+}
+/*focus -visible at the end to override all other borders*/
+:focus-visible {
+    border: 5px dashed red;
+}   
 
