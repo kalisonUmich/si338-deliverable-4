@@ -6,11 +6,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <title>Athlete Profile</title>
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-  <link rel="stylesheet" href="reset.css"/>
+  <link rel="stylesheet" href="./css/reset.css"/>
   <link rel="stylesheet" href="./css/style.css"/>
 </head>
 
 <body>
+  <a href="#main-content" class="hidden-focusable">Skip to main content</a>
+
   <header>
     <div id="profile" class="profile" aria-label="Athlete header">
 
@@ -28,7 +30,7 @@
         </div>      
       </div>
 
-      <div class="profile-scroll-header">
+      <div id="main-content" class="profile-scroll-header">
         <section aria-label="profile-photo">
         <figure>
             <img class="photo" src="./images/cover_photo.jpg" alt="Portrait of the athlete." />
@@ -50,8 +52,8 @@
         </section>
       </div>
 
-      <div class="nav">
-        <a href="#performance-title">Skip to Race Time Chart</a>
+      <div class="skip-to-graph" aria-label="Quick Links">
+        <a href="#performance-panel">Skip to Race Time Chart</a>
       </div>
 
     </div>
@@ -569,12 +571,12 @@
 
         <div class="panel-header">
           <div class="panel-main">
-            <h2 id="performance-title">Performance visualization</h2>
+            <h2 id="performance-title">Performance Visualization</h2>
           </div>
         </div>
-        <p class="viz-help">Race time trend (lower is better).</p>
+        <p class="viz-help">Race time graph, by date.</p>
         <p class="chart-title" id="chart-title" aria-label="chart-title">Race Times per Date</p>
-        <div class="viz-area" aria-label="Visualization area">
+        <div class="viz-area" role="region" tabindex="0" aria-label="Race time graph, use arrow keys to scroll">
           <div class="chart-container">
             <canvas id="time-chart" role="img" aria-label="Line chart of race times over time"></canvas>
           </div>
