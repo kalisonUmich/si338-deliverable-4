@@ -18,13 +18,6 @@
         <div class="meta">
           <h1>Garrett Comer</h1>
         </div>      
-
-        <section class="profile-details-title" aria-label="profile-details-title">
-          <!-- <h2 id="profile-details-title">Profile details</h2> -->
-          <p><strong>School:</strong> Ann Arbor Skyline HS</p>
-          <p><strong>Year:</strong> 11th Grade</p>
-          <p><strong>Contact:</strong> <a href="#" aria-label="Email">example@gmail.com</a></p>
-        </section>
       </div>
 
       <!-- this ensures that the fixed header is always above the content. I added a header that is aria ignored
@@ -33,28 +26,32 @@
           <div class="meta">
           <h1>Garrett Comer</h1>
         </div>      
-
-        <section class="profile-details-title" aria-label="profile-details-title">
-          <!-- <h2 id="profile-details-title">Profile details</h2> -->
-          <p><strong>School:</strong> Ann Arbor Skyline HS</p>
-          <p><strong>Year:</strong> 11th Grade</p>
-          <p><strong>Contact:</strong> <a href="#" aria-label="Email">example@gmail.com</a></p>
-        </section></div>
+      </div>
 
       <div class="profile-scroll-header">
         <section aria-label="profile-photo">
         <figure>
-            <!-- <img class="photo" src="./images/cover_photo.jpg" alt="Portrait of the athlete." /> -->
-            <img class="photo" src="./images/Portrait_Placeholder.png" alt="Portrait of the athlete."/>
+            <img class="photo" src="./images/cover_photo.jpg" alt="Portrait of the athlete." />
         </figure>
         </section>
 
-        <section id="athlete-bio" aria-label="athlete-bio">
+        <section class="profile-details-title" aria-labelledby="profile-details-title">
+          <h2 id="profile-details-title">Profile details</h2>
+          <p><strong>School:</strong> Ann Arbor Skyline HS</p>
+          <p><strong>Year:</strong> 11th Grade</p>
+          <p><strong>Contact:</strong> <a href="#" aria-label="Email">example@gmail.com</a></p>
+        </section>
+
+        <section id="athlete-bio" aria-labelledby="athlete-bio">
           <h2 id="bio-title">Bio</h2>
           <p>
             Garrett is a junior on the skyline xc team. After a mediocre freshman year and a devestating season lasting injury his sophmore year, Garrett was more determended than ever to run well. He was one of the most consistant runners on the team getting that top 7 spot on the team every single race. He excelled in not just running but motivating, by always leading cheers and getting everyone hyped up while still staying positive. His favroite memories of the team was being at camp with everyone and playing games all day while still being full of energy. His favroite race was at holly when their team placed first and went up on stage togerther with a big trophie.
           </p>
         </section>
+      </div>
+
+      <div class="nav">
+        <a href="#performance-title">Skip to Race Time Chart</a>
       </div>
 
     </div>
@@ -574,13 +571,10 @@
           <div class="panel-main">
             <h2 id="performance-title">Performance visualization</h2>
           </div>
-          <div>
-            <button type="button" id="close-panel" aria-label="Close performance panel">X</button>
-          </div>
         </div>
         <p class="viz-help">Race time trend (lower is better).</p>
+        <p class="chart-title" id="chart-title" aria-label="chart-title">Race Times per Date</p>
         <div class="viz-area" aria-label="Visualization area">
-          <p class="Chart Title" id="Chart Title" aria-label="Chart Title">Runner Race Times per Date</p>
           <div class="chart-container">
             <canvas id="time-chart" role="img" aria-label="Line chart of race times over time"></canvas>
           </div>
