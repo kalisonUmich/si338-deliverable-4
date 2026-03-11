@@ -330,7 +330,8 @@ details[open] summary::before {
     }
 }
 @media (forced-colors: active) {
-  .my-element {
+  :root {
+    --default-background: Canvas;
     color: WindowText;
     background-color: Canvas;
     border: 1px solid WindowText;
@@ -340,6 +341,7 @@ details[open] summary::before {
 :focus-visible {
     border: 5px dashed red;
 }   
+
 
 
 
