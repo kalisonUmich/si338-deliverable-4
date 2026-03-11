@@ -329,7 +329,8 @@ details[open] summary::before {
         border-radius: 10px;
     }
 }
-@media (forced-colors: active) {
+/*I needed some help from MDN web docs for this one because I don't know how browser preferences work for this one*/
+@media (forced-colors: active) {  
   :root {
     --default-background: Canvas;
     color: WindowText;
@@ -341,6 +342,7 @@ details[open] summary::before {
 :focus-visible {
     border: 5px dashed red;
 }   
+
 
 
 
