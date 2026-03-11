@@ -329,9 +329,17 @@ details[open] summary::before {
         border-radius: 10px;
     }
 }
+@media (forced-colors: active) {
+  .my-element {
+    color: WindowText;
+    background-color: Canvas;
+    border: 1px solid WindowText;
+  }
+}
 /*focus -visible at the end to override all other borders*/
 :focus-visible {
     border: 5px dashed red;
 }   
+
 
 
