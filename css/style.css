@@ -322,7 +322,6 @@ details[open] summary::before {
     }
     .profile-details-title a:link {
         background-color: white;
-        padding: 0.5em;
     }
     .skip-to-graph :link {
         background-color: white;
@@ -334,4 +333,5 @@ details[open] summary::before {
 :focus-visible {
     border: 5px dashed red;
 }   
+
 
